@@ -1,6 +1,6 @@
 # api.openspacedata.org
 
-Is API will handle the user requests and translate them to the technical parameters of the ESA's API, and it will provide all information for the user interface.
+This API will handle the user requests and translate them to the technical parameters of the ESA's API, and it will provide all information for the user interface.
 
 ## Funding
 
