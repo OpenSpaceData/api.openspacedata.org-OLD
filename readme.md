@@ -1,5 +1,7 @@
 # api.openspacedata.org
 
+![Travic CI result](https://travis-ci.com/OpenSpaceData/api.openspacedata.org.svg?branch=master)
+
 This API will handle the user requests and translate them to the technical parameters of the ESA's API, and it will provide all information for the user interface.
 
 ## Funding
