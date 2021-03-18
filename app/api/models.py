@@ -72,6 +72,7 @@ class Satellite(models.Model):
 
     name = models.CharField(max_length=255)
     accr = models.CharField(max_length=3)
+    task = models.CharField(max_length=256, choices=[('SAR', 'SAR'), ('MSI', 'MSI')])
     operator = models.CharField(max_length=255, default='European Space Agency')
 
     def __str__(self):
@@ -83,8 +84,11 @@ class Indice(models.Model):
 
     name = models.CharField(max_length=255)
     accr = models.CharField(max_length=10)
-    description = models.TextField(max_length=255, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    is_NormalizedDifference = models.BooleanField(blank=True, help_text='Is this indice a normalized difference?')
+    calc = models.CharField(max_length=255, blank=True, help_text='Use calculation just for if normalized difference is checked!')
     satellite_to_use = models.ForeignKey('Satellite', on_delete=models.PROTECT, blank=True, null=True)
+    needed_bands = models.ManyToManyField(Band)
 
     def __str__(self):
         return self.name
@@ -94,7 +98,7 @@ class Application(models.Model):
     """Database models for application information"""
 
     name = models.CharField(max_length=255)
-    description = models.TextField(max_length=255, blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
     indice_to_use = models.ForeignKey('Indice', on_delete=models.PROTECT, blank=True, null=True)
 
     def __str__(self):

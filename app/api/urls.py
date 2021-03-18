@@ -1,6 +1,6 @@
 from django.urls import path
-from api.views import ApiView
+from api.views import OsdView
 
 urlpatterns = [
-    path('api/', ApiView.as_view()),
+    path('', OsdView.as_view()),
 ]

@@ -1,5 +1,7 @@
 from django.contrib import admin
 from api import models
+from api.models import Application, Indice, Satellite, Band
+from django.forms import CheckboxSelectMultiple
 
 admin.site.site_header = 'api.openspacedata.org'
 
@@ -9,6 +11,7 @@ class IndiceAdmin(admin.ModelAdmin):
     list_display = ('name', 'accr', 'satellite_to_use')
     list_filter = ('satellite_to_use', )
     search_fields = ('name', 'accr', 'decription')
+    autocomplete_fields = ['needed_bands']
 admin.site.register(models.Indice, IndiceAdmin)
 
 class ApplicationAdmin(admin.ModelAdmin):
@@ -16,7 +19,7 @@ class ApplicationAdmin(admin.ModelAdmin):
     search_fields = ('name', 'indice_to_use', 'decription')
 admin.site.register(models.Application, ApplicationAdmin)
 
-class BandsInline(admin.StackedInline):
+class BandsInline(admin.TabularInline):
     model = models.Band
     show_change_link = True
 
