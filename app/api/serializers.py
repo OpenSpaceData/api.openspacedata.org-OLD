@@ -27,4 +27,4 @@ class OsdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Application
-        fields = ['name', 'description', 'indice', 'satellite', 'bands', ]
+        fields = ['machine_name', 'name', 'description', 'indice', 'satellite', 'bands', ]

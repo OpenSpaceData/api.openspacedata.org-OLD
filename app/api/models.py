@@ -98,6 +98,7 @@ class Application(models.Model):
     """Database models for application information"""
 
     name = models.CharField(max_length=255)
+    machine_name = models.SlugField(max_length=255, allow_unicode=True)
     description = models.TextField(blank=True, null=True)
     indice_to_use = models.ForeignKey('Indice', on_delete=models.PROTECT, blank=True, null=True)
 

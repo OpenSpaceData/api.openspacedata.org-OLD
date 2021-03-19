@@ -17,6 +17,7 @@ admin.site.register(models.Indice, IndiceAdmin)
 class ApplicationAdmin(admin.ModelAdmin):
     list_display = ('name', 'indice_to_use')
     search_fields = ('name', 'indice_to_use', 'decription')
+    prepopulated_fields = {"machine_name": ("name",)}
 admin.site.register(models.Application, ApplicationAdmin)
 
 class BandsInline(admin.TabularInline):
