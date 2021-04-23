@@ -24,7 +24,11 @@ class OsdSerializer(serializers.ModelSerializer):
     bands = BandSerializer(source='indice_to_use.needed_bands', many=True)
     satellite = SatelliteSerializer(source='indice_to_use.satellite_to_use')
     indice = IndiceSerializer(source='indice_to_use')
+    download = serializers.SerializerMethodField()
+
+    def get_download(self, obj):
+        return self.context
 
     class Meta:
         model = Application
-        fields = ['machine_name', 'name', 'description', 'indice', 'satellite', 'bands', ]
+        fields = ['machine_name', 'name', 'description', 'indice', 'satellite', 'bands', 'download', ]

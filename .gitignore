@@ -8,7 +8,6 @@
 __pycache__
 db.sqlite3
 media
-settings.py
 
 # Backup files # 
 *.bak 
