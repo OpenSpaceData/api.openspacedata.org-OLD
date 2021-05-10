@@ -16,14 +16,8 @@ class OsdView(APIView):
         return Response({"Applications:": serializer.data})
 
 class DetailView(APIView):
-    def get_serializer_context(self):
-        context = super().get_serializer_context()
-        context["date_from"] = self.request.query_params.get("from", None)
-        print(context)
-        return context
-
     def get(self, request, machine_name):
         application = Application.objects.get(machine_name=machine_name)
-        serializer = OsdSerializer(application, context={"date_from": request.query_params.get("from", None), "date_to": request.query_params.get("to", None), "location": request.query_params.get("location", None), })
+        downloads = OsdSerializer(application, context={"date_from": request.query_params.get("from", None), "date_to": request.query_params.get("to", None), "location": request.query_params.get("location", None), })
 
-        return Response({"Everything you need to analyzing "+application.name: serializer.data})
+        return Response({"Everything you need to analyzing "+application.name: downloads.data})
