@@ -10,13 +10,13 @@ More information about the idea of OpenSpaceData you can read here:  *[Interview
 Clone the project:
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/OpenSpaceData/api.openspacedata.org.git
 ```
 
 Go to the project directory:
 
 ```bash
-  cd my-project
+  cd api.openspacedata.org
 ```
 
 Start the server with [Docker Compose](https://github.com/docker/compose):\
