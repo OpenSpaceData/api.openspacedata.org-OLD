@@ -2,7 +2,7 @@
 
 ![Travic CI result](https://travis-ci.com/OpenSpaceData/api.openspacedata.org.svg?branch=master)
 
-This API will handle the user requests and translate them to the technical parameters of the ESA's API, and it will provide all information for the [user interface]() of get.openspacedata.org.
+This API will handle the user requests and translate them to the technical parameters of the ESA's API, and it will provide all information for the [user interface](https://github.com/OpenSpaceData/get.openspacedata.org) of get.openspacedata.org.
 
 More information about the idea of OpenSpaceData you can read here:  *[Interview: OpenSpaceData Wants to Democratise Access to Satellite Data](https://en.reset.org/blog/interview-openspacedata-wants-democratise-access-satellite-data-05252021)*
 ## Run Locally
