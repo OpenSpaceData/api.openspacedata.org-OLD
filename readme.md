@@ -44,7 +44,20 @@ GET /v1/{use_case}/?from={date_from}&to={date_to}&location={location}
 | `use_case` | string | Required. | `vegetation-health` |
 | `date_from` | date | Required. |  `2021-03-01` |
 | `date_to` | date | Required. |  `2021-03-30` |
-| `location` | string | Required. BBox array.|  `13.6677,43.7232,16.2605,45.4522` |
+| `location` | string | Required. |  `Berlin` |
+
+#### Use Cases
+There are multiple defined use cases which can requested:
+
+| Name | String |
+| :-------- | :------- |
+| Visualize Urban Development | `urban-development` |
+| Visualizing Barren Soil | `barren-soil` |
+| Detect Burned Areas | `burned-areas` |
+| True Color Image | `true-color` |
+| Detect Snow Cover | `snow-cover` |
+| Water bodies | `water` |
+| Green Vegetation Health | `vegetation-health` |
 
 #### Responce
 
