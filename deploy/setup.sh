@@ -17,7 +17,7 @@ git clone $PROJECT_GIT_URL $PROJECT_BASE_PATH
 
 # Create virtual environment
 mkdir -p $PROJECT_BASE_PATH/env
-python3 -m venv $PROJECT_BASE_PATH/env
+sudo python3 -m venv $PROJECT_BASE_PATH/env
 
 # Install python packages
 $PROJECT_BASE_PATH/env/bin/pip install -r $PROJECT_BASE_PATH/requirements.txt
