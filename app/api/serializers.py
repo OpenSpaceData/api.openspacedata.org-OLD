@@ -32,11 +32,11 @@ class OsdSerializer(serializers.ModelSerializer):
         bands = instance.bands
 
         # geocoding
-        place = self.context['location']
-        response = requests.get(f"https://nominatim.openstreetmap.org/search?q={place}&format=json&polygon_geojson=1&addressdetails=0&limit=1")
-        json_object = response.json()
-        bb = json_object[0]['boundingbox']
-        bbx = [float(x) for x in bb]
+        # place = self.context['location']
+        # response = requests.get(f"https://nominatim.openstreetmap.org/search?q={place}&format=json&polygon_geojson=1&addressdetails=0&limit=1")
+        # json_object = response.json()
+        # bb = json_object[0]['boundingbox']
+        # bbx = [float(x) for x in bb]
 
         # aws configuration
         url = 'https://earth-search.aws.element84.com/v0' # URL to Sentinel 2 AWS catalog
@@ -53,7 +53,7 @@ class OsdSerializer(serializers.ModelSerializer):
         #             ]
 
         bbox_search = Search(
-            bbox=bbx,
+            bbox=self.context['location'],
             datetime=startDate+"/"+endDate,
             query={'eo:cloud_cover': {'lt': 50}},
             collections=[collection],

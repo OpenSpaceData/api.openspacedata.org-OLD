@@ -20,4 +20,4 @@ class DetailView(APIView):
         application = Application.objects.get(machine_name=machine_name)
         downloads = OsdSerializer(application, context={"date_from": request.query_params.get("from", None), "date_to": request.query_params.get("to", None), "location": request.query_params.get("location", None), })
 
-        return Response({"Everything you need to analyzing "+application.name: downloads.data})
+        return Response(downloads.data)
